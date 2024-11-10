@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+    <link rel="stylesheet" href="css/movie.css">
+</head>
+<body>
+    <header>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search movies..." onkeyup="searchMovies()" />
+            <select id="sort">
+                <option value="popularity">Popularity</option>
+                <option value="release_date">Release Date</option>
+                <option value="vote_average">Rating</option>
+            </select>
+            <button id="searchBtn">Search</button>
+            <button id="watchListBtn">WatchList</button>
+        </div>
+    </header>
+    <main>
+        <div id="movieGrid"></div>
+    </main>
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeMovieModal">&times;</span>
+            <h2 id="movieTitle"></h2>
+            <img id="moviePoster" src="" alt="Poster">
+            <p id="movieSynopsis"></p>
+            <p id="movieRating"></p>
+            <p id="movieRuntime"></p>
+            <div id="movieCast">
+                <h3>Cast</h3>
+            </div>
+            <div id="movieReviews">
+                <h3>Reviews</h3>
+            </div>
+            <div id="movieTrailer">
+                <h3>Trailer</h3>
+            </div>
+            <button id="addToWatchListBtn" onclick="addToWatchList()">Add to Watchlist</button>
+        </div>
+    </div>
+    <div id="watchListModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Your WatchList</h2>
+            <div id="watchListItems"></div>
+            <div id="actionButtons"></div>
+        </div>
+    </div>
+    <script src="js/movie.js"></script>
+</body>
+</html>
